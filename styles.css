@@ -1,7 +1,7 @@
 body {
 	text-align: center;
-	background-color: #f4dcf7;
-	font-family: Avantgarde;
+	background-color: white;
+	font-family: Optima;
 }
 
 a {
@@ -33,28 +33,106 @@ a {
 
 .nav-bar {
 	text-align: center;
+	position: fixed;
+	background-color: white;
+	left: 0;
+    top: 0;
+    width: 100%;
 }
-#nav .selected {
+#nav-tabs .selected {
 	font-style: oblique;
 	font-weight: bold;
 
 }
 
 #nav-tabs a:hover {
-    background-color: #f4dcf7;
-    color: white;
+    background-color: white;
+    color: #0363b7;
     transition: 0.5s;
 }
-#nav {
-	background-color: #ffe6ff;
-	text-align: center;
-	
-}
+
+
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
 
 
 
+/* /\/\/\/\/\/\ HEADER /\/\/\/\/\/\/\ */
+#header h1 {
+	margin: 0;
+	font-size: 100px;
+	font-variant: small-caps;
+	font-style: italic;
+}
+
+#header {
+	font-family: Optima;
+	
+	/*background-color: white;*/
+	color: black;
+	padding-top: 10px;
+	padding-bottom: 0px;
+	text-align: center;
+} 
+/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
+
+
+/* /\/\/\/\/\/\/ ABOUT /\/\/\/\/\/\/\/\//\/\/\/\*/
+#about{
+	background-color: #fdf2ff;
+	width: 60%;
+	display: inline-block;
+	border-bottom-right-radius: 50%;
+	border-top-right-radius: 50%;
+}
+#headshot {
+	width: 20%;
+	display: inline-block;
+	border-radius: 30%;
+	vertical-align: middle;
+	margin: 25px 50px;
+	word-wrap: normal;
+}
+
+#ab-txt {
+	font-size: 25px;
+	display: inline-block;
+	vertical-align: right;
+	width: 70%;
+	font-family: Optima;
+	text-align: left;
+	padding-top: 0px;
+	padding-bottom: 25px;
+}
+
+#ab-txt em{
+	font-size: 35px;
+}
+
+#school {
+	color:#071f6d;
+}
+
+#major{
+	color: #3913ad;
+}
+#german {
+	color: #c44403;
+}
+#rock-climb{
+	color: #0a7bcc;
+}
+/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
+
+
 /* Most Recent Posts */
+#updates {
+	background-color: #fdf2ff;
+	width: 60%;
+	display: inline-block;
+	border-bottom-left-radius: 50%;
+	border-top-left-radius: 50%;
+
+}
 #post-txt {
 	font-size: 18px;
 	line-height: 30px;
@@ -63,54 +141,17 @@ a {
 	text-align: left;
 	width: 50%;
 }
+#post-txt h2 {
+	text-align: center;
+}
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
-/* /\/\/\/\/\/\ HEADER /\/\/\/\/\/\/\ */
-#header h1, h4 {
-	margin: 0;
-}
 
 
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
-
-#container{
-	background-color: white;
-	margin-right: auto;
-	margin-left: auto;
-	text-align: center;
-	margin: auto;
-}
-#header {
-	font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-	font-variant: small-caps;
-	background-color: white;
-	color: black;
-	padding: 10px;
-	text-align: center;
-} 
-#content {
-	padding: 10px;
-}
 
 
-#pics{
-	width: 175px;
-	float: left;
-	list-style-type: 
-}
-#pics ul {
-	list-style-type: none;
-	padding: 0;
-}
-#main{
-	width: 600px;
-	padding: 10px;
-	float: left;
-	clear: both;
-}
-#main h1{
-	text-align: center;
-}
+
+/* /\/\/\/\/\ FOOTER /\/\/\/\/\/\*/
 
 #footer {
 	padding: 10px;
@@ -124,6 +165,7 @@ a {
 	text-align: right;
 }
 
+/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
 
 
