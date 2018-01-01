@@ -50,7 +50,9 @@ a {
     color: #0363b7;
     transition: 0.5s;
 }
-
+#nav-align {
+	float:left;
+}
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
 
@@ -79,10 +81,10 @@ a {
 /* /\/\/\/\/\/\/ ABOUT /\/\/\/\/\/\/\/\//\/\/\/\*/
 #about{
 	background-color: #fdf2ff;
-	width: 60%;
+	width: 100%;
 	display: inline-block;
-	border-bottom-right-radius: 50%;
-	border-top-right-radius: 50%;
+	/*border-bottom-right-radius: 0%;
+	border-top-right-radius: 50%;*/
 }
 #headshot {
 	width: 20%;
@@ -97,7 +99,7 @@ a {
 	font-size: 25px;
 	display: inline-block;
 	vertical-align: right;
-	width: 70%;
+	width: 100%;
 	font-family: Optima;
 	text-align: left;
 	padding-top: 0px;
