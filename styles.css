@@ -99,11 +99,12 @@ a {
 	font-size: 25px;
 	display: inline-block;
 	vertical-align: right;
-	width: 100%;
+	width: 80%;
 	font-family: Optima;
 	text-align: left;
 	padding-top: 0px;
 	padding-bottom: 25px;
+	margin: 40px;
 }
 
 #ab-txt em{
@@ -129,10 +130,10 @@ a {
 /* Most Recent Posts */
 #updates {
 	background-color: #fdf2ff;
-	width: 60%;
+	width: 100%;
 	display: inline-block;
-	border-bottom-left-radius: 50%;
-	border-top-left-radius: 50%;
+	margin-top: 10px;
+	
 
 }
 #castle {
@@ -149,14 +150,16 @@ a {
 	display: inline-block;
 	vertical-align: middle;
 	text-align: left;
-	width: 50%;
-	border-bottom-left-radius: 50%;
+	width: 80%;
+	margin-top: 0px;
+	
 }
 #post-txt h2 {
-	margin-top: 30px;
-
-	float: right;
-	text-align: right;
+	margin-top: 15px;
+	margin-bottom: 30px;
+	margin-right: 100px;
+	float: center;
+	text-align: center;
 	border-top-left-radius: 50%;
 }
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
