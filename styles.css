@@ -83,7 +83,7 @@ a {
 
 /* /\/\/\/\/\/\/ ABOUT /\/\/\/\/\/\/\/\//\/\/\/\*/
 #about{
-	background-color: #fdf2ff;
+	
 	width: 100%;
 	display: inline-block;
 	margin-top: 10px;
@@ -149,6 +149,7 @@ a {
 	border-color: black;
 	border-width: 20px;
 
+
 }
 #photo_text h2{
 	margin-top: 15px;
@@ -162,7 +163,7 @@ a {
 
 /* Most Recent Posts */
 #updates {
-	background-color: #fdf2ff;
+	
 	width: 100%;
 	display: inline-block;
 	margin-top: 10px;
@@ -175,6 +176,26 @@ a {
 }
 #ig_url{
 	color: gray;
+}
+#head h3{
+	text-align: center;
+	vertical-align: center;
+}
+#author{
+	font-style: italic;
+	margin-top: 0px;
+}
+#date {
+	font-variant: small-caps;
+	margin-bottom: 10px;
+	font-size: 15px;
+	font-style: normal;
+	color: gray;
+}
+#post_info{
+	padding: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 #title{
 	margin-top: 15px;
@@ -207,7 +228,7 @@ a {
 
 /* Contact info */
 #contact-info{
-	background-color: #fdf2ff;
+	
 	width: 100%;
 	display: inline-block;
 	margin-top: 10px;
@@ -257,7 +278,66 @@ a {
 }
 /* /\/\/\/\/\/\ */
 
+/* Projects */
+#proj_title{
+	font-style: bold;
+	font-size: 30px;
+	height: 30px;
+}
+#gitlet {
+	float: left;
+	width: 40%;
+	background-color: #cadbf9; 
+	border-color: black;
+	margin: 10px;
+	border-radius: 10%;
+	height: 200px;
+	margin-left: 50px;
+	margin-bottom: 10px;
+}
 
+#git_txt{
+	float: right;
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+#git_link {
+	color: #0363b7
+}
+.git_link a:hover{
+	color: gray;
+	transition: .5s;
+}
+#proj_subtit{
+	vertical-align: center;
+	text-align: center;
+	margin-bottom: 5px;
+}
+
+#website {
+	float: right;
+	width: 40%;
+	background-color: #cadbf9; 
+	border-color: black;
+	margin-left: 10px;
+	border-radius: 10%;
+	height: 200px;
+	margin-right: 50px;
+	margin-bottom: 10px;
+}
+#web_proj {
+	float: right;
+	display: inline-block;
+	text-align: left;
+	font-size: 20px;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+/* /\/\/\ */
 
 
 
