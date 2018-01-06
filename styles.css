@@ -10,6 +10,7 @@ a {
 }
 
 
+
 /* /\/\/\/\/\ SLICES /\/\/\/\/\ */
 .slices {
 	width: 100;
@@ -52,6 +53,7 @@ a {
 }
 #nav-align {
 	float:left;
+	margin-bottom: 0px;
 }
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
@@ -74,6 +76,7 @@ a {
 	padding-top: 10px;
 	padding-bottom: 0px;
 	text-align: center;
+	margin-top: 10px;
 } 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
 
@@ -83,6 +86,7 @@ a {
 	background-color: #fdf2ff;
 	width: 100%;
 	display: inline-block;
+	margin-top: 10px;
 	/*border-bottom-right-radius: 0%;
 	border-top-right-radius: 50%;*/
 }
@@ -107,6 +111,11 @@ a {
 	margin: 40px;
 }
 
+#resume:hover{
+	
+    color: #0363b7;
+    transition: 0.5s;
+}
 #ab-txt em{
 	font-size: 35px;
 }
@@ -126,6 +135,30 @@ a {
 }
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
+/*Pictures*/
+#photos {
+	display: inline-block;
+	vertical-align: center;
+	margin: 15px;
+}
+
+.indi_pics {
+	width: 18%;
+	display: inline;
+	word-wrap: normal;
+	border-color: black;
+	border-width: 20px;
+
+}
+#photo_text h2{
+	margin-top: 15px;
+	margin-bottom: 30px;
+	margin-right: 100px;
+	float: center;
+	text-align: center;
+	font-style: italic;
+}
+/* /\/\/\/\/\/\ */
 
 /* Most Recent Posts */
 #updates {
@@ -136,13 +169,21 @@ a {
 	
 
 }
-#castle {
-	
-	display: inline-block;
-	border-radius: 20%;
-	vertical-align: center;
-	
-	word-wrap: normal;
+#ig_url:hover{
+	color: #0363b7;
+    transition: 0.5s;
+}
+#ig_url{
+	color: gray;
+}
+#title{
+	margin-top: 15px;
+	margin-bottom: 30px;
+	margin-right: 100px;
+	float: center;
+	text-align: center;
+	font-weight: bold;
+	font-size: 70px;
 }
 #post-txt {
 	font-size: 18px;
@@ -164,6 +205,57 @@ a {
 }
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
+/* Contact info */
+#contact-info{
+	background-color: #fdf2ff;
+	width: 100%;
+	display: inline-block;
+	margin-top: 10px;
+}
+
+#main_contact{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	float: center;
+	text-align: center;
+	font-weight: bold;
+	font-size: 70px;
+	font-style: italic;
+}
+#contact_blurb{
+	font-style: normal;
+	font-size: 40px;
+	color: #f44245;
+	text-align: center;
+	float: center;
+	font-weight: bold;
+}
+
+.con_title{
+	text-align: center;
+	margin-right: 30px;
+	margin-left: 70px;
+	font-weight: bolder;
+	font-size: 35px;
+	font-style: italic;
+	
+}
+.con_det {
+	text-align: center;
+	margin-right: 30px;
+	margin-left: 70px;
+	font-size: 20px;
+	font-weight: bold;
+	
+}
+.con_det a{
+	color: #0363b7;
+}
+.con_det a:hover{
+	color: gray;
+	transition: .5s;
+}
+/* /\/\/\/\/\/\ */
 
 
 
@@ -172,16 +264,11 @@ a {
 /* /\/\/\/\/\ FOOTER /\/\/\/\/\/\*/
 
 #footer {
-	padding: 10px;
-	clear: both;
-}
-#footer h4{
 	text-align: center;
+	clear: both;
 
 }
-#footer h5 {
-	text-align: right;
-}
+
 
 /* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
