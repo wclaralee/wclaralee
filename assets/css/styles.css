@@ -1,261 +1,62 @@
 body {
 	text-align: center;
 	background-color: white;
-	font-family: Optima;
+	font-family: 'Caveat', cursive;
 }
 
 a {
 	text-decoration: none;
-	color: red;
+	color: rgba(63, 61, 61, 0.884);
 }
-
-
-
-/* /\/\/\/\/\ SLICES /\/\/\/\/\ */
-.slices {
-	width: 100;
-	height: 100;
-	border-top: solid 50px;
-	border-right: solid 0px transparent;
+/* intro page*/
+#head {
+	display: flex;
+	position: absolute;
+	align-items: center;
+	justify-content: center;
 }
- #slice-one {
- 	border-top-color: #33639D;
-	background: #f9f3ec;
- }
-/* /\/\/\/\/\ NAVIGATION BAR /\/\/\/\/\ */
-#nav-tabs a{
-	float: center;
-    color: black;
-    text-align: center;
-   	padding: 0px 40px;
-  	word-wrap: normal;
-  	display: inline-block;
+#main-pic {
+	/* float: left; */
+	/* padding-left: 10px; */
+	width: 25%;
+	border-radius: 50%;
 }
-
-.nav-bar {
-	text-align: center;
-	position: fixed;
-	background-color: white;
-	left: 0;
-    top: 0;
-    width: 100%;
-}
-#nav-tabs .selected {
-	font-style: oblique;
-	font-weight: bold;
-
-}
-
-#nav-tabs a:hover {
-    background-color: white;
-    color: #0363b7;
-    transition: 0.5s;
-}
-#nav-align {
-	float:left;
-	margin-bottom: 0px;
-}
-
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
-
-
-
-/* /\/\/\/\/\/\ HEADER /\/\/\/\/\/\/\ */
-#header h1 {
-	margin: 0;
-	font-size: 100px;
-	font-variant: small-caps;
-	font-style: italic;
-}
-
-#header {
-	font-family: Optima;
+.navigate {
+	/* display: flex; */
 	
-	/*background-color: white;*/
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+ul {
+	display: block;
+	list-style-type: none;
+	/* display: flex; */
+	
+}
+li {
+	font-size: 30px;
 	color: black;
-	padding-top: 10px;
-	padding-bottom: 0px;
-	text-align: center;
-	margin-top: 10px;
-} 
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\ */
+	float: left;
+	text-decoration: none;
+	padding: 0px 20px;
+}
+.nav-button:hover {
+	transition-delay: .1s;
+	color: rgba(47, 108, 143, 0.884);
+	animation-name: twitch-button;
+	-webkit-transform: rotate(12deg);
+}
+/************/
 
-
-/* /\/\/\/\/\/\/ ABOUT /\/\/\/\/\/\/\/\//\/\/\/\*/
-#about{
-	
-	width: 100%;
-	display: inline-block;
-	margin-top: 10px;
-	/*border-bottom-right-radius: 0%;
-	border-top-right-radius: 50%;*/
-}
-#headshot {
-	width: 20%;
-	display: inline-block;
-	border-radius: 30%;
-	vertical-align: middle;
-	margin: 25px 50px;
-	word-wrap: normal;
-}
-
-#ab-txt {
-	font-size: 25px;
-	display: inline-block;
-	vertical-align: right;
-	width: 80%;
-	font-family: Optima;
-	text-align: left;
-	padding-top: 0px;
-	padding-bottom: 25px;
-	margin: 40px;
-}
-#resume{
-	color: gray;
-}
-#resume:hover{
-	
-    color: #0363b7;
-    transition: 0.5s;
-}
-#ab-txt em{
-	font-size: 35px;
-}
-
-#school {
-	color:#071f6d;
-}
-
-#major{
-	color: #3913ad;
-}
-#german {
-	color: #c44403;
-}
-#rock-climb{
-	color: #0a7bcc;
-}
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
-
-/*Pictures*/
-#photos {
-	display: inline-block;
-	vertical-align: center;
-	margin: 15px;
-}
-
-.indi_pics {
-	width: 18%;
-	display: inline;
-	word-wrap: normal;
-	border-color: black;
-	border-width: 20px;
-
-
-}
-#photo_text h2{
-	margin-top: 15px;
-	margin-bottom: 30px;
-	margin-right: 100px;
-	float: center;
-	text-align: center;
-	font-style: italic;
-}
-/* /\/\/\/\/\/\ */
-
-/* Most Recent Posts */
-#updates {
-	
-	width: 100%;
-	display: inline-block;
-	margin-top: 10px;
-	
-
-}
-#ig_url:hover{
-	color: #0363b7;
-    transition: 0.5s;
-}
-#ig_url{
-	color: gray;
-}
-#head h3{
-	text-align: center;
-	vertical-align: center;
-}
-#author{
-	font-style: italic;
-	margin-top: 0px;
-}
-#date {
-	font-variant: small-caps;
-	margin-bottom: 10px;
-	font-size: 15px;
-	font-style: normal;
-	color: gray;
-}
-#post_info{
-	padding: 0px;
-	margin-top: 10px;
-	margin-bottom: 10px;
-}
-#title{
-	margin-top: 15px;
-	margin-bottom: 30px;
-	margin-right: 100px;
-	float: center;
-	text-align: center;
-	font-weight: bold;
-	font-size: 70px;
-}
-#post-txt {
-	font-size: 18px;
-	line-height: 30px;
-	display: inline-block;
-	vertical-align: middle;
-	text-align: left;
-	width: 80%;
-	margin-top: 0px;
-	
-}
-#post-txt h2 {
-	margin-top: 15px;
-	margin-bottom: 30px;
-	margin-right: 100px;
-	float: center;
-	text-align: center;
-	border-top-left-radius: 50%;
-}
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
 /* Contact info */
-#left-panel {
-	float: left;
-	width: 40%;
-}
-#bishop {
-	float: left;
-	width: 100%;
-	display: inline-block;
-	border-radius: 10%;
-	vertical-align: middle;
-	margin: 25px 50px;
-	margin-bottom: 5px;
-	word-wrap: normal;
-}
-#bishopcaption {
-	float: left;
-	width: 100%;
-	display: inline-block;
-	border-radius: 10%;
-	vertical-align: middle;
-	margin-top: 3px;
-	margin-bottom: 2px;
-	margin-left: 44px;
-	word-wrap: normal;
 
-}
+
 #contact-info{
+	display: none;
 	float: right;
 	width: 50%;
 	display: inline-block;
@@ -307,79 +108,10 @@ a {
 }
 /* /\/\/\/\/\/\ */
 
-/* Projects */
-#proj_title{
-	font-style: bold;
-	font-size: 30px;
-	height: 30px;
-}
-#gitlet {
-	float: left;
-	width: 40%;
-	background-color: #cadbf9; 
-	border-color: black;
-	margin: 10px;
-	border-radius: 10%;
-	height: 200px;
-	margin-left: 50px;
-	margin-bottom: 10px;
-}
-
-#git_txt{
-	float: right;
-	display: inline-block;
-	text-align: left;
-	font-size: 20px;
-	margin-right: 10px;
-	margin-left: 10px;
-}
-#git_link {
-	color: #0363b7
-}
-.git_link a:hover{
-	color: gray;
-	transition: .5s;
-}
-#proj_subtit{
-	vertical-align: center;
-	text-align: center;
-	margin-bottom: 5px;
-}
-
-#website {
-	float: right;
-	width: 40%;
-	background-color: #cadbf9; 
-	border-color: black;
-	margin-left: 10px;
-	border-radius: 10%;
-	height: 200px;
-	margin-right: 50px;
-	margin-bottom: 10px;
-}
-#web_proj {
-	float: right;
-	display: inline-block;
-	text-align: left;
-	font-size: 20px;
-	margin-right: 10px;
-	margin-left: 10px;
-}
-
-/* /\/\/\ */
 
 
 
-/* /\/\/\/\/\ FOOTER /\/\/\/\/\/\*/
 
-#footer {
-	text-align: center;
-	clear: both;
-
-}
-
-
-/* /\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\*/
 
 
 

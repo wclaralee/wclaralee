@@ -1,0 +1,82 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+	text-align: center;
+	background-color: white;
+    font-family: 'Amatic SC', cursive;
+    width: 70%;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(63, 61, 61, 0.884);
+}
+.contact {
+    /* display: flex; */
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+#img {
+    width: 100%;
+     
+    float: left;
+    border-color: black;
+}
+#fourth {
+    width: 50%;
+    float: left;
+    border-radius: 40%; 
+}
+#typewriter {
+    position: relative;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+.sources {
+    margin-top: 100px;
+    text-align: center;
+}
+.src:hover {
+    transition-delay: .1s;
+    color: rgba(47, 108, 143, 0.884);
+}   
+.list {
+    font-size: 40px;
+    color: black;
+    float: right;
+    text-decoration: none;
+    
+}
+.navigate {
+	/* display: flex; */
+    width: 100%;
+    margin-top: 20px;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+ul {
+	display: block;
+	list-style-type: none;
+	/* display: flex; */
+	
+}
+.nav-button {
+	font-size: 30px;
+	color: black;
+	float: left;
+	text-decoration: none;
+	padding: 0px 20px;
+}
+.nav-button:hover {
+	transition-delay: .01s;
+	animation-name: twitch-button;
+	-webkit-transform: rotate(12deg);
+}

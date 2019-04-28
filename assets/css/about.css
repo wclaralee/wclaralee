@@ -1,0 +1,75 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+body {
+	text-align: center;
+	background-color: white;
+    font-family: 'Amatic SC', cursive;
+    width: 70%;
+    
+   
+}
+
+a {
+    text-decoration: none;
+    color: rgba(63, 61, 61, 0.884);
+}
+.about {
+    /* display: flex; */
+    /* align-content: center; */
+    justify-content: center;
+    align-items: center;
+}
+#img {
+    width: 100%;
+    border-radius: 3%;
+
+    border-color: black;
+}
+#bishop {
+    width: 50%;
+}
+#typewriter {
+    position: relative;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
+#about-me {
+    justify-content: left;
+    align-items: left;
+}
+#abt {
+    
+    font-family: 'Amiri', serif;
+    font-size: 20px;
+}
+.navigate {
+	/* display: flex; */
+	
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+ul {
+	display: block;
+	list-style-type: none;
+	/* display: flex; */
+	
+}
+li {
+	font-size: 30px;
+	color: black;
+	float: left;
+	text-decoration: none;
+	padding: 0px 20px;
+}
+.nav-button:hover {
+	transition-delay: .1s;
+	color: rgba(47, 108, 143, 0.884);
+	animation-name: twitch-button;
+	-webkit-transform: rotate(12deg);
+}
