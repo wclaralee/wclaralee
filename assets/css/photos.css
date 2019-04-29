@@ -5,7 +5,8 @@ body {
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
+    color: rgba(63, 61, 61, 0.884);
 }
 .autoplay{
     width:90%;
@@ -20,4 +21,32 @@ a {
 .slick-slide img{
     width:100%;
     border: 2px solid #fff;
+}
+.navigate {
+	/* display: flex; */
+	
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+ul {
+	display: block;
+	list-style-type: none;
+	/* display: flex; */
+	
+}
+li {
+	font-size: 30px;
+	color: black;
+	float: left;
+	text-decoration: none;
+	padding: 0px 20px;
+}
+.nav-button:hover {
+	transition-delay: .1s;
+	color: rgba(47, 108, 143, 0.884);
+	animation-name: twitch-button;
+	-webkit-transform: rotate(12deg);
 }
