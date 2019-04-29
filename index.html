@@ -40,13 +40,17 @@
 			
 			.snowflake {
 				position: fixed;
-				background-color: rgb(172, 222, 255);
+				/* background-color: rgb(57, 196, 44); */
 				user-select: none;
 				z-index: 1000;
 				pointer-events: none;
-				border-radius: 50%;
-				width: 10px;
-				height: 10px;
+				width: 20px; 
+				height: 20px;
+				background-color: #A0DE21; 
+				-moz-border-radius: 100px 0px;
+				-webkit-border-radius: 100px 0px;
+				border-radius: 100px 0px;
+								
 			}
 		</style>
 		
@@ -55,24 +59,13 @@
 		</div>
 		
 		<script>
-		// Array to store our Snowflake objects
 			var snowflakes = [];
-			
-			// Global variables to store our browser's window size
 			var browserWidth;
 			var browserHeight;
-			
-			// Specify the number of snowflakes you want visible
 			var numberOfSnowflakes = 50;
-			
-			// Flag to reset the position of the snowflakes
 			var resetPosition = false;
-			
-			// Handle accessibility
 			var enableAnimations = false;
-			var reduceMotionQuery = matchMedia("(prefers-reduced-motion)");
-			
-			// Handle animation accessibility preferences 
+			var reduceMotionQuery = matchMedia("(prefers-reduced-motion)"); 
 			function setAccessibilityState() {
 				if (reduceMotionQuery.matches) {
 				enableAnimations = false;
@@ -83,10 +76,6 @@
 			setAccessibilityState();
 			
 			reduceMotionQuery.addListener(setAccessibilityState);
-			
-		//
-		// It all starts here...
-		//
 			function setup() {
 				if (enableAnimations) {
 				window.addEventListener("DOMContentLoaded", generateSnowflakes, false);

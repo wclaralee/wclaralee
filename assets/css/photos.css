@@ -9,17 +9,20 @@ a {
     color: rgba(63, 61, 61, 0.884);
 }
 .autoplay{
-    width:90%;
+    width:100%;
     margin:0px auto;
+    overflow: hidden;
+    align-items: center;
 }
 .slick-slide{
     margin:10px;
 }
 .photos {
-    width: 500px;
+    width: 200px;
+    
 }
 .slick-slide img{
-    width:100%;
+    width:50%;
     border: 2px solid #fff;
 }
 .navigate {
