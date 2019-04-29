@@ -14,6 +14,9 @@ a {
 .slick-slide{
     margin:10px;
 }
+.photos {
+    width: 500px;
+}
 .slick-slide img{
     width:100%;
     border: 2px solid #fff;
