@@ -8,9 +8,14 @@ a {
     text-decoration: none;
     color: rgba(63, 61, 61, 0.884);
 }
+.typewriter {
+    position: relative;
+    font-family: 'Amatic SC', cursive;
+    font-size: 30px;
+}
 .autoplay{
     width:100%;
-    margin:0px auto;
+    /* margin:0px auto; */
     overflow: hidden;
     align-items: center;
 }
@@ -18,11 +23,13 @@ a {
     margin:10px;
 }
 .photos {
-    width: 200px;
+    width: 450px;
+    height: 450px;
+    object-fit: cover;
     
 }
 .slick-slide img{
-    width:50%;
+    /* width:25%; */
     border: 2px solid #fff;
 }
 .navigate {
