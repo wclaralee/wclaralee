@@ -1,220 +1,261 @@
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>claz?</title>
-		<link rel ="stylesheet" type="text/css" href="assets/css/styles.css"/>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-		<script src="assets/js/script.js"></script>
-		<link href="https://fonts.googleapis.com/css?family=Caveat" rel="stylesheet">
-	</head>	
-	<body>
-		<div class="head">
-			<h1 id="intro">hello, my name is clara lee!</h1>
-			<div id="headshot">
-				<img id="main-pic" src="assets/img/main-pic.JPG">
-			</div>
-			<div class="navigate">
-				<ul>
-					<li class="nav-button">
-						<a  href="about.html">about</a>
-					</li>
-					<li class="nav-button" >
-						<a href="photos.html">photos</a>
-					</li>
-					<li class="nav-button">
-						<a  href="contact.html">contact</a>
-					</li>
-				</ul>
-			</div>
-		</div>
-		
-		
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-		<style>
-			#snowflakeContainer {
-				position: absolute;
-				left: 0px;
-				top: 0px;
-				display: none;
-			}
-			
-			.snowflake {
-				position: fixed;
-				/* background-color: rgb(57, 196, 44); */
-				user-select: none;
-				z-index: 1000;
-				pointer-events: none;
-				width: 20px; 
-				height: 20px;
-				background-color: #A0DE21; 
-				-moz-border-radius: 100px 0px;
-				-webkit-border-radius: 100px 0px;
-				border-radius: 100px 0px;
-								
-			}
-		</style>
-		
-		<div id="snowflakeContainer">
-			<span class="snowflake"></span>
-		</div>
-		
-		<script>
-			var snowflakes = [];
-			var browserWidth;
-			var browserHeight;
-			var numberOfSnowflakes = 50;
-			var resetPosition = false;
-			var enableAnimations = false;
-			var reduceMotionQuery = matchMedia("(prefers-reduced-motion)"); 
-			function setAccessibilityState() {
-				if (reduceMotionQuery.matches) {
-				enableAnimations = false;
-				} else { 
-				enableAnimations = true;
-				}
-			}
-			setAccessibilityState();
-			
-			reduceMotionQuery.addListener(setAccessibilityState);
-			function setup() {
-				if (enableAnimations) {
-				window.addEventListener("DOMContentLoaded", generateSnowflakes, false);
-				window.addEventListener("resize", setResetFlag, false);
-				}
-			}
-			setup();
-				
-				//
-				// Constructor for our Snowflake object
-				//
-			function Snowflake(element, speed, xPos, yPos) {
-				// set initial snowflake properties
-				this.element = element;
-				this.speed = speed;
-				this.xPos = xPos;
-				this.yPos = yPos;
-				this.scale = 1;
-			
-				// declare variables used for snowflake's motion
-				this.counter = 0;
-				this.sign = Math.random() < 0.5 ? 1 : -1;
-			
-				// setting an initial opacity and size for our snowflake
-				this.element.style.opacity = (.1 + Math.random()) / 3;
-			}
-			  
-				//
-				// The function responsible for actually moving our snowflake
-				//
-			Snowflake.prototype.update = function () {
-				// using some trigonometry to determine our x and y position
-				this.counter += this.speed / 5000;
-				this.xPos += this.sign * this.speed * Math.cos(this.counter) / 40;
-				this.yPos += Math.sin(this.counter) / 40 + this.speed / 30;
-				this.scale = .5 + Math.abs(10 * Math.cos(this.counter) / 20);
-			
-				// setting our snowflake's position
-				setTransform(Math.round(this.xPos), Math.round(this.yPos), this.scale, this.element);
-			
-				// if snowflake goes below the browser window, move it back to the top
-				if (this.yPos > browserHeight) {
-				this.yPos = -50;
-				}
-			}
-			  
-				//
-				// A performant way to set your snowflake's position and size
-				//
-			function setTransform(xPos, yPos, scale, el) {
-				el.style.transform = `translate3d(${xPos}px, ${yPos}px, 0) scale(${scale}, ${scale})`;
-			}
-			
-			//
-			// The function responsible for creating the snowflake
-			//
-			function generateSnowflakes() {
-			
-				// get our snowflake element from the DOM and store it
-				var originalSnowflake = document.querySelector(".snowflake");
-			
-				// access our snowflake element's parent container
-				var snowflakeContainer = originalSnowflake.parentNode;
-				snowflakeContainer.style.display = "block";
-			
-				// get our browser's size
-				browserWidth = document.documentElement.clientWidth;
-				browserHeight = document.documentElement.clientHeight;
-			
-				// create each individual snowflake
-				for (var i = 0; i < numberOfSnowflakes; i++) {
-			  
-					// clone our original snowflake and add it to snowflakeContainer
-					var snowflakeClone = originalSnowflake.cloneNode(true);
-					snowflakeContainer.appendChild(snowflakeClone);
-			  
-					// set our snowflake's initial position and related properties
-					var initialXPos = getPosition(50, browserWidth);
-					var initialYPos = getPosition(50, browserHeight);
-					var speed = 5 + Math.random() * 40;
-			  
-					// create our Snowflake object
-					var snowflakeObject = new Snowflake(snowflakeClone,
-					  speed,
-					  initialXPos,
-					  initialYPos);
-					snowflakes.push(snowflakeObject);
-				  }
-			  
-				  // remove the original snowflake because we no longer need it visible
-				  snowflakeContainer.removeChild(originalSnowflake);
-			  
-				  moveSnowflakes();
-				}
-			  
-				//
-				// Responsible for moving each snowflake by calling its update function
-				//
-				function moveSnowflakes() {
-			  
-				  if (enableAnimations) {
-					for (var i = 0; i < snowflakes.length; i++) {
-					  var snowflake = snowflakes[i];
-					  snowflake.update();
-					}      
-				  }
-			  
-				  // Reset the position of all the snowflakes to a new value
-				  if (resetPosition) {
-					browserWidth = document.documentElement.clientWidth;
-					browserHeight = document.documentElement.clientHeight;
-			  
-					for (var i = 0; i < snowflakes.length; i++) {
-					  var snowflake = snowflakes[i];
-			  
-					  snowflake.xPos = getPosition(50, browserWidth);
-					  snowflake.yPos = getPosition(50, browserHeight);
-					}
-			  
-					resetPosition = false;
-				  }
-			  
-				  requestAnimationFrame(moveSnowflakes);
-				}
-			  
-				//
-				// This function returns a number between (maximum - offset) and (maximum + offset)
-				//
-				function getPosition(offset, size) {
-				  return Math.round(-1 * offset + Math.random() * (size + 2 * offset));
-				}
-			  
-				//
-				// Trigger a reset of all the snowflakes' positions
-				//
-				function setResetFlag(e) {
-				  resetPosition = true;
-				}
-			  </script>
-	</body>
-		
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="custom.css">
+    <title>Our little escrow Dapp</title>
+  </head>
+  <body>
+    <h1>Welcome to SCENT.</h1>
+
+    <h2>"Scent" money through smart contracts:</h2>
+    <br> </br>
+    <h5>Property Address: 906 World Cultural Center </h5>
+    <h5>Property Value: $100k </h5>
+    <br> </br>
+    <form id="contract-form">
+      <div class="form-group">
+        <label for="Sender Address">Your Wallet Address</label>
+        <input value="" type="text" class="form-control" id="fromAddress" aria-describedby="fromAddressHelp" placeholder="Enter your address" required="true">
+        <small id="fromAddressHelp" class="form-text text-muted">Enter your wallet address. Note: you will need to approve this with your private key.</small>
+      </div>
+
+      <!--
+      <div class="form-group">
+        <label for="Sender Address">Sender ETH Address</label>
+        <input value="" type="text" class="form-control" id="fromAddress1" aria-describedby="fromAddressHelp" placeholder="Enter your address" required="true">
+        <small id="fromAddressHelp" class="form-text text-muted">Enter your wallet address. Note: you will need to approve this with your private key.</small>
+      </div>
+    -->
+
+
+
+
+
+        <div class="form-group">
+          <label for="Receiver Address">Landlord Wallet Address</label>
+          <input value="" type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" placeholder="Enter the receipient address" required="true">
+          <small id="toAddressHelp" class="form-text text-muted">Enter the wallet address of the recipient.</small>
+        </div>
+
+          <div class="form-group">
+            <label for="Amount">Amount</label>
+            <input value="2" type="text" class="form-control" id="amount" aria-describedby="amountHelp" placeholder="Amount to send in ETH" required="true">
+            <small id="amountHelp" class="form-text text-muted">How much you want to send in ETH.</small>
+          </div>
+
+          <!--
+          <div class="form-group">
+            <label for="Amount">Amount</label>
+            <input value="2" type="text" class="form-control" id="amount1" aria-describedby="amountHelp" placeholder="Amount to send in ETH" required="true">
+            <small id="amountHelp" class="form-text text-muted">How much you want to send in ETH.</small>
+          </div>
+        -->
+
+      <button type="submit" class="btn btn-success">Submit</button>
+      <!-- <button type="submit" class="btn btn-success" onclick = "sub2()">Submit2</button> -->
+
+      <div id="deposit-result">Click the Submit button to deposit your ETH to the contract.</div>
+    </form>
+    <hr>
+    <!--<h2>Balance:</h2>
+    <form id="get-balance-form">
+      <button type="submit" class="btn btn-success">Get Balance</button>
+      <div id="the-balance">Click Button to get the current contract balance.</div>
+    </form>
+    <h2>Approver:</h2>
+    <form id="approver-form">
+      <button type="submit" class="btn btn-success">Get Approver</button>
+      <div id="approver-display">Click Button to get the address of the approver.</div>
+    </form>
+
+    <form id="approve-form">
+      <button type="submit" class="btn btn-success">Approve Transaction</button>
+      <div id="approval-display">Click the button to approve the transaction.</div>
+    </form>
+-->
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="web3.min.js"></script>
+    <script src="contractAbi.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script>
+    var contractAddress = '0x9c34676A0fD5b056317282000Bc15db5104134dD';
+    if ( typeof web3 != 'undefined') {
+      web3 = new Web3(web3.currentProvider);
+    } else {
+      web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:9545"));
+    }
+
+    var version = web3.version;
+    console.log("using web3 version: " + version);
+
+    var ApprovalContract = new web3.eth.Contract(abi, contractAddress);
+
+    var ApprovalContract1 = new web3.eth.Contract(abi, contractAddress);
+
+
+
+
+    console.log(ApprovalContract);
+    /*
+    function sub1 (){
+      $('#contract-form').submit(function() {
+        event.preventDefault();
+        var fromAddress = $('#fromAddress').val();
+        var toAddress = $('#toAddress').val();
+        var amount = $('#amount').val();
+        if (web3.utils.isAddress(fromAddress) != true) {
+          alert('You did not enter a correct ethereum address for the sender address.');
+          return;
+        }
+        if (web3.utils.isAddress(toAddress) != true) {
+          alert('You did not enter a correct ethereum address for the recipient address.');
+          return;
+        }
+        if (amount == 0) {
+          alert('You must send more than 0 ETH.');
+          return;
+        }
+
+
+
+      ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 100000, value: web3.utils.toWei(amount,'ether')},
+        function(error, result) {
+          if (error) {
+            console.log('error: ' + error);
+              $('#deposit-result').html('Error: ' + error);
+          } else {
+            $('#deposit-result').html('Success TX: <b>' + result + '</b>');
+          }
+        })
+    });
+  }
+
+    function sub2 (){
+      $('#contract-form').submit(function() {
+        event.preventDefault();
+        var fromAddress1 = $('#fromAddress1').val();
+        var toAddress = $('#toAddress').val();
+        var amount1 = $('#amount').val();
+        if (web3.utils.isAddress(fromAddress1) != true) {
+          alert('You did not enter a correct ethereum address for the sender address.');
+          return;
+        }
+        if (web3.utils.isAddress(toAddress) != true) {
+          alert('You did not enter a correct ethereum address for the recipient address.');
+          return;
+        }
+        if (amount1 == 0) {
+          alert('You must send more than 0 ETH.');
+          return;
+        }
+
+
+
+      ApprovalContract1.methods.deposit(toAddress).send({from: fromAddress1, gas: 100000, value: web3.utils.toWei(amount,'ether')},
+        function(error, result) {
+          if (error) {
+            console.log('error: ' + error);
+              $('#deposit-result').html('Error: ' + error);
+          } else {
+            $('#deposit-result').html('Success TX: <b>' + result + '</b>');
+          }
+        })
+    });
+  }
+  */
+
+
+    $('#contract-form').submit(function() {
+      event.preventDefault();
+      var fromAddress = $('#fromAddress').val();
+      var toAddress = $('#toAddress').val();
+      var amount = $('#amount').val();
+      if (web3.utils.isAddress(fromAddress) != true) {
+        alert('You did not enter a correct ethereum address for the sender address.');
+        return;
+      }
+      if (web3.utils.isAddress(toAddress) != true) {
+        alert('You did not enter a correct ethereum address for the recipient address.');
+        return;
+      }
+      if (amount == 0) {
+        alert('You must send more than 0 ETH.');
+        return;
+      }
+
+
+
+    ApprovalContract.methods.deposit(toAddress).send({from: fromAddress, gas: 100000, value: web3.utils.toWei(amount,'ether')},
+      function(error, result) {
+        if (error) {
+          console.log('error: ' + error);
+            $('#deposit-result').html('Error: ' + error);
+        } else {
+          $('#deposit-result').html('Success TX: <b>' + result + '</b>');
+        }
+      })
+  });
+
+
+
+
+
+    $('#get-balance-form').submit(function() {
+      event.preventDefault();
+
+      web3.eth.getBalance(contractAddress,
+        function(error, result) {
+          if (error) {
+            console.log('error: ' + error);
+          } else {
+            console.log('balance:' + result);
+            $('#the-balance').html('<b>Current Balance:</b> ' + web3.utils.fromWei(result));
+          }
+        });
+    });
+
+
+        $('#approve-form').submit(function() {
+          event.preventDefault();
+
+          ApprovalContract.methods.approve().call({from: '0x9c34676A0fD5b056317282000Bc15db5104134dD', gas: 100000},
+              function(error, result) {
+                if (error) {
+                  console.log('error: ' + error);
+                }
+                else {
+                  console.log('result: ' + JSON.stringify(result));
+                  $('#approval-display').html('Transaction Approved. TX: <b>' + result + '</b>');
+                }
+              });
+        });
+        $('#approver-form').submit(function() {
+          event.preventDefault();
+
+          ApprovalContract.methods.viewApprover().call(
+              function(error, result) {
+                if (error) {
+                  console.log('error: ' + error);
+                }
+                else {
+                  console.log('result: ' + JSON.stringify(result));
+                  $('#approver-display').html('Approver Address: <b>' + result + '</b>');
+                }
+              });
+        });
+
+    </script>
+
+    </body>
 </html>
