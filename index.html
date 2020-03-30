@@ -38,7 +38,7 @@
 
 
         <div class="form-group">
-          <label for="Receiver Address">Landlord Wallet Address</label>
+          <label for="Receiver Address">Property Seller Wallet Address</label>
           <input value="" type="text" class="form-control" id="toAddress" aria-describedby="toAddressHelp" placeholder="Enter the receipient address" required="true">
           <small id="toAddressHelp" class="form-text text-muted">Enter the wallet address of the recipient.</small>
         </div>
@@ -246,7 +246,7 @@
           ApprovalContract.methods.viewApprover().call(
               function(error, result) {
                 if (error) {
-                  console.log('error: ' + error);
+                  console.log('error: ' + error)l;
                 }
                 else {
                   console.log('result: ' + JSON.stringify(result));
